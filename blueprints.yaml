@@ -1,0 +1,41 @@
+name: Page Language Router
+version: 0.9
+description: Reroute if page language is different from parent.
+icon: language
+author:
+  name: Ondrej Vysek
+  email: ondrejv@optimalizovane-it.cz
+homepage: https://github.com/ondrejvysek/grav-plugin-pagelanguagerouter
+keywords: grav, plugin, language, route
+bugs: https://github.com/ondrejvysek/grav-plugin-pagelanguagerouter/issues
+docs: https://github.com/ondrejvysek/grav-plugin-pagelanguagerouter/blob/master/readme.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    routemode:
+      type: toggle
+      label: Reroute mode
+      highlight: 1
+      default: 1
+      options:
+        1: Raise 404 error
+        0: Reroute to the parent
+      validate:
+        type: bool
+    reroutecode:
+      type: text
+      size: medium
+      label: HTML code while rerouting
+      default: '301'
