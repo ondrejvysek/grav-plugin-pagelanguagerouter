@@ -25,9 +25,9 @@ class PageLangRouterPlugin extends Plugin
 		// get config
 		$routemode = $this->config->get('plugins.pagelangrouter.routemode'); 
 		$reroutecode = $this->config->get('plugins.pagelangrouter.reroutecode'); 
-		if ($page->routable()) { 
+		//if ($page->routable() && $page->route() != '/') { 
+		if ($page->routable() && $page->Language() != null && $page->parent()->Language() != null) { 
 			try {
-				$this->grav['debugger']->addMessage($routemode);
 				if ($page->Language() != $page->parent()->Language()){
 					$this->grav['debugger']->addMessage('Page language different from parent, rerouting');
 					if ($routemode){
