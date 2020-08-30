@@ -24,7 +24,7 @@ class PageLangRouterPlugin extends Plugin
         }
 		// get config
 		$routemode = $this->config->get('plugins.pagelangrouter.routemode'); 
-		$reroutecode = $this->config->get('plugins.pagelangrouter.reroutecode'); 
+		$reroutecode = $this->config->get('plugins.pagelangrouter.reroutecode', '301');
 		//if ($page->routable() && $page->route() != '/') { 
 		if ($page->routable() && $page->Language() != null && $page->parent()->Language() != null) { 
 			try {
